@@ -6,7 +6,7 @@ namespace SecondApi.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("datetime")]
         public IActionResult GetDateTime()
         {
             return Ok(DateTime.Now);

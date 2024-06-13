@@ -1,0 +1,41 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/home/name",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8081
+        }
+      ],
+      "UpstreamPathTemplate": "/firstapi/name",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "name"
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/home/datetime",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8082
+        }
+      ],
+      "UpstreamPathTemplate": "/secondapi/datetime",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "datetime"
+    }
+  ],
+  "Aggregates": [
+    {
+      "UpstreamPathTemplate": "/name_datetime",
+      "RouteKeys": [
+        "name",
+        "datetime"
+      ],
+      "Aggregator": "TestRequestAggregator"
+    }
+  ]
+}

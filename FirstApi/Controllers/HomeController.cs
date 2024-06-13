@@ -6,7 +6,7 @@ namespace FirstApi.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        [HttpGet("[action]")]
+        [HttpGet("name")]
         public IActionResult GetName()
         {
             return Ok("Gilthayllor Sousa");
